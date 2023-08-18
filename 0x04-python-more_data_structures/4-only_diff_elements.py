@@ -1,12 +1,14 @@
-#!/usr/bin/python3
-
 def only_diff_elements(set_1, set_2):
-    diff_elements = set_1.symmetric_difference(set_2)
-    return diff_elements
+  """
+  Returns a set of all elements present in only one set.
 
-# Example usage
-set1 = {1, 2, 3, 4}
-set2 = {3, 4, 5, 6}
-result = only_diff_elements(set1, set2)
-print(result)  # Output: {1, 2, 5, 6}
+  Args:
+    set_1: The first set.
+    set_2: The second set.
+
+  Returns:
+    A set of all elements present in only one set.
+  """
+
+  return set_1.difference(set_2) | set_2.difference(set_1)
 
